@@ -1,0 +1,10 @@
+def build(bld):
+    loc = bld.path.relpath()
+    def full_name(name):
+        return loc + '/' + name
+
+    for name, deps in [
+        ('Bar', ['foo/Foo']),
+        #('Bar', ['MYSDK', 'foo/Foo']),
+        ('Baz', ['PTHREAD', 'bar/Bar'])]:
+        bld(features='cxx', source=name+'.cpp', target=full_name(name), use=deps)

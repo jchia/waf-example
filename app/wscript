@@ -1,0 +1,7 @@
+def build(bld):
+    loc = bld.path.relpath()
+    def full_name(name):
+        return loc + '/' + name
+
+    bld(features='cxx cxxprogram', source='main.cpp', target='main',
+        use=['bar/Baz'])

@@ -1,0 +1,9 @@
+This is a sample project to demonstrate using waf to build C++ projects.
+
+The main app is in app/main.cpp. Support classes are in directories foo and bar.
+
+To build, download and put the waf executable file in the top-level directory,
+then run "./waf configure" followed by "./waf".
+
+There is some Python-related stuff in the top-level wscript but it's not used
+anywhere, but you could use it when building with 'pyext' feature.
